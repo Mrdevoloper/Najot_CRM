@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "Node",
+        "price": "7000.000"
+    },
+    {
+        "id": 2,
+        "name": "Pyton",
+        "price": "300.000"
+    },
+    {
+        "id": 3,
+        "name": "react",
+        "price": "500.000"
+    },
+    {
+        "id": 4,
+        "name": "View",
+        "price": "200000"
+    }
+]

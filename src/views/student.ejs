@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css//admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+      <div class="containerr middle">
+      <header>
+        <h1 class="Admin">Najot talim</h1>
+      </header>
+      <hr class="hreff">
+     <div class="one">
+      <ul class="tabs">
+        <li class="tab is-active">
+          <a class="link" href="#" data-switcher data-tab="1"><span class="span1"><i class="fa-solid fa-people-group"></i>Groups &caret;</span></a>
+        </li>
+        <li class="tab">
+          <a class="link" href="#" data-switcher data-tab="2"><span class="span3"><i class="fa-solid fa-bookmark"></i>HomeTask</span></a>
+        </li>
+       
+      </ul>
+      <hr class="href">
+  <main>
+    <section class="pages">
+
+     <!-- TEACHERS PAGE -->
+
+     <div class="page is-active" data-page="1">
+      <div class="teachers">
+      </div>
+      <div class="ALLofONEs">
+          <h3 class="me">Group</h3>
+        <h3 class="me">Course</h3>
+        <h3 class="me">Teacher</h3>
+   </div>
+         <div class="wrap-group-one">
+          <%students.map( e => {%>
+            <h3><%= e.name%></h3>
+            <h3><%= e.courses%></h3>
+            <h3><%= e.teacher%></h3>
+        <% })%>
+         </div>
+    </div>
+      <div class="page" data-page="2">
+        <h1>Home Tasks </h1>
+      </div>
+        
+    </section>
+  </main>
+     </div>
+ </div>
+  <script src="js/script.js"></script>
+</body>
+</html>

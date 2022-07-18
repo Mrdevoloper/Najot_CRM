@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Node01",
+        "courses": "Node",
+        "teacher": "Abdulloh"
+    },
+    {
+        "id": 2,
+        "name": "Py01",
+        "courses": "Pyton",
+        "teacher": "AhrorAli"
+    },
+    {
+        "id": 3,
+        "name": "react01",
+        "courses": "react",
+        "teacher": "Ilhomjon"
+    },
+    {
+        "id": 4,
+        "name": "view01",
+        "courses": "View",
+        "teacher": "Guli"
+    }
+]

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css//admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+      <div class="containerr middle">
+      <header>
+       <div class="talim">
+        <h1 class="Admin">Najot talim</h1>
+        <h2>
+          <%groups.map( e => {%>
+            <h3 class="names"><%= e.teacher%></h3>
+        <% })%>
+      </header>
+      <hr class="hreff">
+     <div class="one">
+      <ul class="tabs">
+        <li class="tab is-active">
+          <a class="link" href="#groups" data-switcher data-tab="1"><span class="span1"><i class="fa-solid fa-people-group"></i>Groups &caret;</span></a>
+        </li>
+        <li class="tab">
+          <a class="link" href="#students" data-switcher data-tab="2"><span class="span1"><i class="fa-solid fa-graduation-cap"></i>Students</span></a>
+        </li>
+      </ul>
+      <hr class="href">
+  <main>
+    <section class="pages">
+
+      <div class="page is-active" data-page="1">
+        <div class="teachers">
+         
+        </div>
+        <div class="ALLofONEs">
+            <h3 class="me">Group</h3>
+          <h3 class="me">Course</h3>
+          <h3 class="me">Teacher</h3>
+     </div>
+           <div class="wrap-group-one">
+            <%groups.map( e => {%>
+              <h3><%= e.name%></h3>
+              <h3><%= e.courses%></h3>
+              <h3>
+              <a class="cbb" href="#modal">
+                Homework &curvearrowleft;
+              </a>
+            </h3>
+          <% })%>
+           </div>
+           <!-- <>/////////.................................................. -->
+
+          <div id="modal">
+            <div class="modal-conten">
+              <div class="header">
+                <h2>Add new Course</h2>
+              </div>
+              <div class="copy">
+                <form enctype="multipart/form-data">
+                 <div class="datainput">
+                 <input class="validate" id="wa_name" name="image" required="" type="file" value=''/>
+                 <span class="highlight"></span><span class="bar"></span>
+                 <label></label>
+                 </div>
+                 <div class="datainput">
+                 <input class="validate" id="wa_number" name="desc" required="" type="text" value=''/>
+                 <span class="highlight"></span><span class="bar"></span>
+                 <label>Homework description</label>
+                 </div>
+                <button class="btnAll" type="submit">send</button>
+                 </form> 
+                <a href="#">&times;</a> </div>
+            </div>
+            <div class="overlay"></div>
+          </div>
+
+           <!-- <>/////////.................................................. -->
+
+      </div>
+      <div class="page" data-page="2">
+      <div class="ALLofONEs">
+        <h3 class="me">Students</h3>
+        <h3 class="mee">Group</h3>
+
+ </div>
+ <%AllStudents.map( e => {%>
+  <div class="wrap-group">
+          <h3 class="num"><%= e.name%></h3>
+          <h3 class="num"><%= e.Groups%></h3>
+        </div>
+        <hr class="href2">
+
+      <% })%>
+      </div>
+    </section>
+  </main>
+     </div>
+ </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
+
+

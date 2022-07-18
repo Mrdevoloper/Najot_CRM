@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css//admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+      <div class="containerr middle">
+      <header>
+        <h1 class="Admin">Najot talim</h1>
+      </header>
+      <hr class="hreff">
+     <div class="one">
+      <ul class="tabs">
+        <li class="tab is-active">
+          <a class="link" href="#teacher" data-switcher data-tab="1"><span class="span1"><i class="fa-solid fa-person-chalkboard"></i>Teachers</span></a>
+        </li>
+        <li class="tab">
+          <a class="link" href="#students" data-switcher data-tab="2"><span class="span1"><i class="fa-solid fa-graduation-cap"></i>Students</span></a>
+        </li>
+        <li class="tab">
+          <a class="link" href="#groups" data-switcher data-tab="3"> <span class="span3"><i class="fa-solid fa-people-group"></i>Groups</span></a>
+        </li>
+        <li class="tab">
+          <a class="link" href="#groups" data-switcher data-tab="4"><span class="span3"><i class="fa-solid fa-bookmark"></i>Courses</span></a>
+        </li>
+      </ul>
+      <hr class="href">
+  <main>
+    <section class="pages">
+
+     <!-- TEACHERS PAGE -->
+
+      <div class="page is-active" data-page="1">
+        <div class="teachers">
+          <h1 class="part1">Teachers</h1>
+          <button id="newBookButton"  class="btnC button">Create Teacher &curvearrowleft;</button>
+        </div>
+     
+        <div class="ALLofONE">
+             <h3 class="menu1">id</h3>
+             <h3 class="menu2">Name</h3>
+             <h3 class="menu3">Phone</h3>
+        </div>
+        <% AllTeacher.map(e => { %>
+          <div class="AllTeachers">
+          <h2 class="no"><%= e.id %></h2>
+          <h2 class="name"><%= e.name %></h2>
+          <h2 class="phone"><%= e.password %></h2>
+          </div>
+          <hr class="href2">
+      <% })%>
+
+        <div class="container">
+          <div class="title">
+          </div>
+          <div class="menu">
+          </div>    
+      </div>
+
+      <div id="newModal" class="modal">
+          <div class="modal-box">
+              <div class="modal-header">
+                  <span class='close'>&times;</span>
+              </div>
+              <div class="modal-content">
+                  <h1>Add new Teacher</h1> 
+                   <form class="whatsapp-form" action="/admin" method="POST" enctype="application/x-www-form-urlencoded">
+                    <div class="datainput">
+                    <input class="validate" id="wa_name" name="name" required="" type="text" value=''/>
+                    <span class="highlight"></span><span class="bar"></span>
+                    <label>Your Name</label>
+                    </div>
+                    <div class="datainput">
+                    <select id="wa_select"  name="course" >
+                      <option hidden='hidden' selected='selected' value='default'>Select Option</option>
+                      <% AllCourse.map(e => { %>
+                        <option value="<%= e.name%>">
+                           <%= e.name%>
+                        </option>
+                    <% })%>
+                    </select>
+                    </div>
+                    <div class="datainput">
+                    <input class="validate" id="wa_number" name="passwords" required="" type="number" value=''/>
+                    <span class="highlight"></span><span class="bar"></span>
+                    <label>Input Number</label>
+                    </div>
+                   <button class="btnAlll"  type="submit">send</button>
+                    </form> 
+              </div>
+          </div>
+      </div>
+      </div>
+
+      <!-- STUDENTS PAGE -->
+
+      <div class="page" data-page="2">
+        <div class="students">
+          <h1 class="part1">Students</h1>
+          <div class="heading">
+            <button class="register">
+                <a href="#modalf" class="registerLink">Create Student &curvearrowleft;</a>
+            </button>
+        </div>
+        </div>
+        <div class="ALLofONE">
+          <h3 class="menu1">id</h3>
+          <h3 class="menu2">Name</h3>
+          <h3 class="menu3">Group</h3>
+     </div>
+          <% AllStudents.map(e => { %>
+            <div class="AllTeacherr">
+            <h2 class="no"><%= e.id %></h2>
+            <h2 class="studentHr"><%= e.name %></h2>
+            <h2 class="studentHr"><%= e.Groups %></h2>
+          </div>
+          <hr class="href2">
+        <% })%>
+       <div class="modal_container" id="modalf">
+          <div class="modalf">
+              <a href="#" class="closef">X</a>
+              <span class="modal_heading">
+                  Create New Student
+              </span>
+              <form class="whatsapp-form" action="/admin" method="POST" enctype="application/x-www-form-urlencoded">
+                <div class="datainput">
+                <input class="validate" id="wa_name" name="nams" required="" type="text" value=''/>
+                <span class="highlight"></span><span class="bar"></span>
+                <label>Student Name</label>
+                </div>
+                <div class="datainput">
+                </div>
+              
+                  <div class="wrapper">
+                    <div class="datainput">
+                      <select id="wa_select course" onfocus="AllCourse" class="course"  name="cours" >
+                        <option hidden='hidden' selected='selected' value='default'>Courses</option>
+                        <% AllCourse.map(e => { %>
+                          <option value="<%= e.name%>">
+                             <%= e.name%>
+                          </option>
+                      <% })%>
+                      </select>
+                      </div>
+                      <div class="datainput">
+                        <select id="wa_select group" class="courses"  name="Groups" >
+                          <option hidden='hidden' selected='selected' value='default'>Groups</option>
+                          <% AllGroups.map(e => { %>
+                            <option value="<%= e.name%>">
+                               <%= e.name%>
+                            </option>
+                        <% })%>
+                        </select>
+                        </div>
+                  </div>
+                <div class="datainput">
+                <input class="validate"  id="wa_number" name="password" required="" type="number" value=''/>
+                <span class="highlight"></span><span class="bar"></span>
+                <label>Input Number</label>
+                </div>
+               <button class="btnAll"  type="submit">send</button>
+                </form> 
+          </div>
+      </div> 
+
+
+        <!-- ?????///// -->
+      </div>
+
+      <!-- GROUPS PAGE -->
+
+      <div class="page" data-page="3">
+        <div class="teachers">
+          <h1 class="part1">Groups</h1>
+          <label class="modal-btn btnC" for="modal-toggle">Create Group &curvearrowleft;</label> 
+
+        </div>
+        <div class="ALLofONE">
+          <h3 class="menu1">id</h3>
+          <h3 class="menu2">Groups</h3>
+          <h3 class="menu3">Courses</h3>
+          <h3 class="menu3">Teachers</h3>
+     </div>
+     <% AllGroups.map(e => { %>
+      <div class="AllTeacherd">
+      <h2 class="no"><%= e.id %></h2>
+      <h2 class="teach_1"><%= e.name %></h2>
+      <h2 class="teach_1"><%= e.courses %></h2>
+      <h2 class="teach_1"><%= e.teacher %></h2>
+
+      </div>
+      <hr class="href2">
+  <% })%>
+  <div class="modal-container">
+    <input id="modal-toggle" type="checkbox">
+    <label class="modal-backdrop" for="modal-toggle"></label>
+    <div class="modal-content">
+      <label class="modal-close" for="modal-toggle">&#x2715;</label>
+         
+      <form class="whatsapp-form" action="/admin" method="POST" enctype="application/x-www-form-urlencoded">
+        <div class="datainput">
+        <input class="validate" id="wa_name" name="group" required="" type="text" value=''/>
+        <span class="highlight"></span><span class="bar"></span>
+        <label> Name</label>
+        </div>
+        <div class="datainput">
+        </div>
+        <div class="datainput">
+          <select id="wa_select" name="courses">
+            <option hidden='hidden' selected='selected' >Select Option</option>
+            <% AllCourse.map(e => { %>
+              <option value="<%= e.name%>">
+                 <%= e.name%>
+              </option>
+          <% })%>
+          </select>
+          </div>
+          <div class="datainput">
+            <select id="wa_select" name="teacher">
+              <option hidden='hidden' selected='selected' >Select Option</option>
+              <% AllTeacher.map(e => { %>
+                <option value="<%= e.name%>">
+                   <%= e.name%>
+                </option>
+            <% })%>
+            </select>
+            </div>
+        <div class="datainput">
+        </div>
+       <button class="btnAlll" type="submit">send</button>
+        </form> 
+    </div>          
+  </div>  
+      </div>
+
+      <!-- COURSES PAGE -->
+
+      <div class="page" data-page="4">
+      <div class="teachers">
+        <h1 class="part1">Courses</h1>
+        <a class="btnC" href="#modal">
+          Create Course &curvearrowleft;
+        </a>
+      </div>
+      <div class="ALLofONE">
+        <h3 class="menu1">id</h3>
+        <h3 class="menu2">Name</h3>
+        <h3 class="menu3">Price</h3>
+   </div>
+         <% AllCourse.map(e => { %>
+          <div class="AllTeacher">
+          <h2 class="no"><%= e.id %></h2>
+          <h2 class="name"><%= e.name %></h2>
+          <h2 class="phone"><%= e.price %></h2>
+          </div>
+          <hr class="href2">
+      <% })%>
+          <div id="modal">
+            <div class="modal-conten">
+              <div class="header">
+                <h2>Add new Course</h2>
+              </div>
+              <div class="copy">
+                <!-- <h1>Add</h1>  -->
+                <form class="whatsapp-form" action="/admin" method="POST" enctype="application/x-www-form-urlencoded">
+                 <div class="datainput">
+                 <input class="validate" id="wa_name" name="nam" required="" type="text" value=''/>
+                 <span class="highlight"></span><span class="bar"></span>
+                 <label>Course Name</label>
+                 </div>
+                 <div class="datainput">
+                 <input class="validate" id="wa_number" name="price" required="" type="number" value=''/>
+                 <span class="highlight"></span><span class="bar"></span>
+                 <label>Price</label>
+                 </div>
+
+                <button class="btnAll" type="submit">send</button>
+                 </form> 
+                <a href="#">&times;</a> </div>
+            </div>
+            <div class="overlay"></div>
+          </div>        
+      </div>
+        
+    </section>
+  </main>
+     </div>
+ </div>
+  <script src="/js/script.js"></script>
+</body>
+</html>

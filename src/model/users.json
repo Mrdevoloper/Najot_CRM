@@ -1,0 +1,99 @@
+[
+    {
+        "id": 1,
+        "name": "Xayrullo",
+        "password": 1,
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "name": "Abdulloh",
+        "password": "993146480",
+        "course": "Node",
+        "role": "teacher"
+    },
+    {
+        "id": 3,
+        "name": "Abdulaziz",
+        "password": "997525158",
+        "course": "Pyton",
+        "role": "teacher"
+    },
+    {
+        "id": 4,
+        "name": "Jamshid",
+        "password": "99222334455",
+        "role": "student",
+        "Groups": "Node01",
+        "course": "Node"
+    },
+    {
+        "id": 5,
+        "name": "Abror",
+        "password": "995621480",
+        "role": "student",
+        "Groups": "Py01",
+        "course": "Pyton"
+    },
+    {
+        "id": 6,
+        "name": "Xislat",
+        "password": "992345678",
+        "role": "student",
+        "Groups": "Node01",
+        "course": "Node"
+    },
+    {
+        "id": 7,
+        "name": "muhammad",
+        "password": "9934567676",
+        "role": "student",
+        "Groups": "Py01",
+        "course": "Pyton"
+    },
+    {
+        "id": 8,
+        "name": "Ilhomjon",
+        "password": "977799090",
+        "course": "react",
+        "role": "teacher"
+    },
+    {
+        "id": 9,
+        "name": "Ihtiyor",
+        "password": "905667777",
+        "role": "student",
+        "Groups": "react01",
+        "course": "react"
+    },
+    {
+        "id": 10,
+        "name": "Temur",
+        "password": "778899090",
+        "role": "student",
+        "Groups": "react01",
+        "course": "react"
+    },
+    {
+        "id": 11,
+        "name": "Samandar",
+        "password": "900009900",
+        "course": "View ",
+        "role": "teacher"
+    },
+    {
+        "id": 12,
+        "name": "Guli",
+        "password": "905656565",
+        "course": "View",
+        "role": "teacher"
+    },
+    {
+        "id": 13,
+        "name": "muhlisa",
+        "password": "909099009",
+        "role": "student",
+        "Groups": "view01",
+        "course": "View"
+    }
+]
